@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时钟</title>
+    <style>
+      *{
+         margin: 0;
+         padding: 0;
+      }
+      body{
+          background-color: chartreuse;
+      }
+      .main{
+         width: 300px;
+         height: 100px;
+         line-height: 100px;
+         text-align: center;
+         margin: 0 auto;
+         border: 2px dashed  black;
+         border-radius: 10px;
+         margin-top: 20px;
+        font-size: 20px;
+        
+      }
+
+
+    </style>
+</head>
+<body>
+    <div class="main" id="main">
+     
+    </div>
+ 
+
+    <script>
+        function fn(num){
+          if(num<10){
+                return  "0"+num
+          }else{
+              return num
+          }
+
+        }
+         
+       function clock(){
+        var time = new Date();
+        var year = time.getFullYear();
+        var month = time.getMonth()+1;
+        var day = time.getDay();
+        var hours = time.getHours();
+        var minute = time.getMinutes();
+        var second = time.getSeconds();
+        var str = ["周日","周一","周二","周三","周四","周五","周六"]
+    
+       
+        return  res =  fn(year) +"年" + fn(month) +"月" + fn(str[day]) + ""     + fn(hours) +":" + fn(minute) +":" + fn(second) +"";
+         
+     }   
+
+       var main = document.getElementById("main");
+          main.innerText = clock();  
+
+
+      setInterval(function(){
+        main.innerText = clock();
+      },1000)
+
+
+
+
+
+    </script>
+</body>
+</html>

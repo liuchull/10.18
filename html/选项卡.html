@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        .main{
+         width: 300px;
+         border: 1px solid #444; 
+         margin: 0 auto;
+        }
+        .main li{
+         
+          
+            display: inline-block;
+            border: 1px solid #444;
+            margin-right: 30px;
+            margin-top: -1px;
+        }
+        .main div{
+            width: 100%;
+            height: 200px;
+            border: 1px solid #444;
+            background-color: aqua;
+            margin-left:-1px ;
+            margin-top: -1px;
+            display: none;
+        }
+        .main li.current{
+            background-color: aqua;
+            border-bottom-color:aqua ;
+        }
+        .main div.current{
+            display: block;
+            background-color: aqua;
+        }
+        
+
+
+
+    </style>
+</head>
+<body>
+    <div class="main" id="main">
+         <ul>
+             <li class="current">数学</li>
+             <li>英语</li>
+             <li>语文</li>
+         </ul>
+    <div class="current"></div> 
+    <div></div>
+    <div></div>
+
+    </div>
+    <script>
+       var main = document.getElementById("main");
+       var lis = main.getElementsByTagName("li");
+       var divs = main.getElementsByTagName("div");
+          for(var i=0;i<lis.length;i++){
+              lis[i].index = i;
+              lis[i].onclick = function(){
+                 for(var i=0;i<lis.length;i++){
+                        lis[i].className = "";
+                        divs[i].className = "";                    
+                 }
+                this.className = "current";
+                divs[this.index].className = "current" 
+             }
+          }
+
+    </script>
+</body>
+</html>

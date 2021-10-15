@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     var ary=[1,2,3,4,5,6,3,1,1];
+  
+    //  console.log(ary)
+     
+    //   var ary2 = [1,11,1,1,12,3,4,534,345232352,42]
+    //   function symbol(ary){
+
+    //     for(var i=0;i<ary.length-1;i++){
+    //     for(var j=i+1;j<ary.length;j++){
+    //           if(ary[i]==ary[j]){
+    //               ary.splice(j,1);
+    //               j--;
+    //           }    
+    //     }  
+    //  }
+    //  return ary
+    //  }
+    //  var res = symbol(ary)
+    //  var res2 = symbol(ary2)
+
+    //  function symbol(ary){
+    //           var obj = {}; 
+    //     for(var i=0;i<ary.length;i++){
+    //              var item  = ary[i];
+    //             if(obj[item] == item ){
+    //                   ary.splice(i,1);
+    //                   i--;
+    //                   continue
+    //             }
+    //             obj[item] = item
+    //     }   
+
+    //  return ary
+
+    //  }
+    //  var res = symbol(ary)
+
+   
+    // function symbol(ary){
+    //  var newAry = [];
+    //  for(var i=0;i<ary.length;i++){
+    //      if(newAry.indexOf(ary[i])==-1){
+    //             newAry.push(ary[i])
+    //      }
+    //  }  
+    //  return newAry
+
+
+
+    // }
+    // var ary2 = [1,1,1,11,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+    // var res2 = symbol(ary2)
+
+
+  //数组去重双for法
+    var res = [1,2,3,4,4,3,2,12,43,2,1];
+    function symbol(res){
+         for(var i=0;i<res.length-1;i++){
+                 for(var j=i+1;j<res.length;j++){
+                      if(res[i]==res[j]){
+                           res.splice(j,1); 
+                           j--;
+                      }
+                 }
+         }
+             return res
+    }
+     var ary = symbol(res)
+
+
+     // 数组与对象遍历法
+    function  symbol(){
+         var obj = {};
+         for(var i=0;i<res.length;i++){
+               var item = res[i];
+               if(obj[item]=item){
+                     res.splice(i,1);
+                     i--; 
+                     continue 
+               }
+         }
+         return res
+    }
+
+
+    function symbol(){
+          var res2 = [];
+          for(var i=0;i<res.length;i++){
+               if(res2.indexOf(res[i]==-1)){
+                      res2.push(ary[i]);
+               }
+          }   
+        return
+    }
+   var  ary=[1,2,4,5,3,6] 
+    function li(){
+         var res = [];
+    for(var i=0;i<ary.length;i++){
+         if(res.indexOf(ary[i])=-1){
+              res.push(ary[i])  
+         }
+
+    }
+   return
+
+    }
+    
+
+      
+    </script>
+</body>
+</html>

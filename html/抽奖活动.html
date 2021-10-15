@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   *{
+       margin: 0;
+       padding: 0;
+   }
+   .main{
+       width: 200px;
+       height: 60px;
+       margin: 0 auto;
+       border: 1px solid black;
+       border-radius: 5px;
+       margin-top: 5px;
+       line-height: 60px;
+       text-align: center;
+       font-size: 40px;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="main" id="main"></div>
+
+    <script>
+      function code(){
+          var res = "0123456789";
+          var str = "";
+         for(var i=0;i<4;i++){
+             var index = Math.round(Math.random()*9)
+              str+=res[index]
+         }
+         return str
+      };
+      var main = document.getElementById("main"); 
+       var timer = setInterval(function(){
+        main.innerText = code()
+       },1000);
+       var timer2 = setTimeout(function(){
+              clearInterval(timer);
+              timer = null;
+              clearTimeout(timer2);
+              timer2 = null;
+              alert("恭喜您中奖了!")
+       },10000) 
+
+    </script>
+</body>
+</html>

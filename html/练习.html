@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选项卡</title>
+</head>
+<style>
+   *{
+       margin: 0;
+       padding: 0;
+   }
+   ul,ol{
+       list-style: none;
+   }
+   body{
+       background-color: black;
+   }
+   .main{
+       width: 400px;
+       margin: 0 auto;
+   }
+   .ul li{
+       width: 100px;
+       height: 70px;
+       line-height: 70px;
+       text-align: center;
+       margin-right: 20px;  
+       display: inline-block;
+       border: 1px solid #444;
+       position: relative;
+       top: 1px;
+       cursor: pointer;
+   }
+   .main>div {
+       height: 400px;
+       line-height: 400px;
+       text-align: center;
+       border: 1px solid #444;
+       display: none;
+   }
+   .main div.current{
+       display: block;
+       background-color: aqua;
+      
+   }
+   .main li.current{
+       background-color: aqua;
+       border-bottom-color: aqua;
+   }
+   .img{
+       width: 100%;
+       height: 100%;
+       overflow: hidden;
+   }
+
+
+
+
+</style>
+<body>
+   <div class="main" id="main">
+       <ul class="ul" id="ul">
+           <li class="current">大头</li>
+           <li>宇航</li>
+           <li>胡昆</li>
+       </ul>
+   <div class="current">
+       <img class="img" src="C:\Users\lc123456\2021.10.9\image\微信图片_20211010215451.jpg" alt="">
+
+   </div>
+   <div>
+<img class="img" src="C:\Users\lc123456\2021.10.9\image\微信图片_20211010215502.jpg" alt="">
+
+   </div>
+   <div>
+       <img class="img" src="C:\Users\lc123456\2021.10.9\image\微信图片_20211010215456.jpg" alt="">
+   </div>
+
+
+
+   </div>
+
+
+   <script>
+  var main = document.getElementById("main");
+  var lis = main.getElementsByTagName("li")
+  var divs = main.getElementsByTagName("div")
+  lis[0].onclick=function(){
+       for(var i=0;i<lis.length;i++){
+           lis[i].className=""       
+       };
+       for(var i=0;i<divs.length;i++){
+           divs[i].className=""       
+       };
+       lis[0].className = "current"
+       divs[0].className = "current"
+  };
+  lis[1].onclick=function(){
+       for(var i=0;i<lis.length;i++){
+           lis[i].className=""       
+       };
+       for(var i=0;i<divs.length;i++){
+           divs[i].className=""       
+       };
+       lis[1].className = "current"
+       divs[1].className = "current"
+  };
+  lis[2].onclick=function(){
+       for(var i=0;i<lis.length;i++){
+           lis[i].className=""       
+       };
+       for(var i=0;i<divs.length;i++){
+           divs[i].className=""       
+       };
+       lis[2].className = "current"
+       divs[2].className = "current"
+  }
+
+
+
+
+
+
+
+
+   </script>
+</body>
+</html>

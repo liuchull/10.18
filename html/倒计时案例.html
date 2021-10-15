@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时案例</title>
+    <style>
+   *{
+       margin: 0;
+       padding: 0;
+   }
+   body{
+       background-color: chartreuse;
+   }
+   .di img{
+       width: 600px;
+       height: 400px;
+       overflow: hidden;
+       margin: 0 auto;
+       display: none;
+   }
+   .di{
+       margin: 0 auto;
+       height: 400px;
+       width: 600px;
+   }
+   .p{
+       font-size: 40px;
+       text-indent: 5px;
+       margin: 0 auto;
+       display: block;
+       color:purple;}
+   .main{
+       height: 100px;
+       line-height: 100px;
+       text-align: center;
+       border: 2px dashed black;
+       border-radius: 10px;
+       font-size: 40px;
+       color: red;
+       
+   }
+   .di img.current{
+        display: block;
+
+   }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="di" id="di"> <img class="current" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic4.zhimg.com%2F50%2Fv2-1772f3d6ebc90bc834776f3c367c67f9_hd.jpg&refer=http%3A%2F%2Fpic4.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1636819196&t=8925530eebcf1252777b7bc040995104" alt="">
+        <img  src="C:\Users\lc123456\2021.10.9\image\微信图片_20211010215451.jpg" alt="">
+        
+    
+    </div>
+    <button class="p" id="p"> 距离我的宝贝生日还有！ </button>
+    <div class="main" id="main">2022-1-1 00:00:00</div>
+
+    <script>
+       
+
+
+
+
+   function zero(num){
+       if(num<10){
+              return "0"+num
+       }else{
+           return num
+       }
+   }
+  function downTime(){
+      if(final<=0){
+        clearInterval(res);
+         res = null;
+         return "TIME OVER!"
+
+      }
+     var final = new Date("2021-12-17 00:00:00") - new Date();
+     var day = Math.floor(final/(1000*60*60*24)); 
+     var hour = Math.floor((final-day*1000*60*60*24)/(1000*60*60));
+     var minute = Math.floor((final-day*1000*60*60*24-hour*1000*60*60)/(1000*60));
+     var second = Math.floor((final-day*1000*60*60*24-hour*1000*60*60-minute*1000*60)/1000)
+     return zero(day) + "天" + zero(hour) + "时" + zero(minute) + "分" + zero(second) + "秒！"
+  }
+
+   var main = document.getElementById("main")
+   main.innerText = downTime()
+   var res=setInterval(function(){
+    main.innerText = downTime()
+   },1000)
+
+        var di = document.getElementById("di");
+        var imgs = di.getElementsByTagName("img");
+        var p = document.getElementById("p") ;
+        p.onmouseover = function(){
+             imgs[0].className = "";
+             imgs[1].className = "current";
+        };   
+        p.onmouseleave = function(){
+            imgs[1].className = "";
+            imgs[0].className = "currnet"
+        }
+
+
+
+    </script>
+</body>
+</html>

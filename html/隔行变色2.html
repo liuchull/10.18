@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隔行保暖色</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        } 
+        ul,ol{
+            list-style: none;
+        }
+        .ul{
+            width: 500px;
+            margin: 0 auto;
+            border: 2px solid #444;
+        }
+        .ul li{
+            height: 40px;
+            line-height: 40px;
+        }
+        /* .ul li:nth-child(2n+1){
+            background-color: cyan;
+        }
+        .ul li:nth-child(2n){
+            background-color: khaki;
+        } */
+
+
+    </style>
+</head>
+<body>
+    <ul class="ul" id="ul">
+        <li>你真的要走 我还一厢情愿的奢求</li>
+        <li>封印在荒芜的时空 不再前进的我</li>
+        <li>我会心疼 自己的成熟</li>
+        <li>压抑每个 歇斯底里的念头</li>
+        <li>你的借口 浅薄地像根烟头</li>
+        <li>熄灭我 最后的渴求</li>
+        <li>你能往前走 我也厌倦了再蹉跎</li>
+        <li>紧抱住的绿洲 是残破的海市蜃楼</li>
+        <li>你真的要走 我还一厢情愿的奢求</li>
+    </ul>
+
+    <script>
+        var ul = document.getElementById("ul");
+        var lis = ul.getElementsByTagName("li")
+     for(var i=0;i<lis.length;i++){
+           if(i%2==0){
+               lis[i].style.backgroundColor="red"
+           }else{
+               lis[i].style.backgroundColor="blue"
+           };
+         lis[i].onmouseover=function(){
+             this.oldColor = this.style.backgroundColor;
+             this.style.backgroundColor = "black"
+         }  ;
+         lis[i].onmouseleave = function(){
+             this.style.backgroundColor = this.oldColor
+         }
+
+     } 
+
+
+    </script>
+</body>
+</html>

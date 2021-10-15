@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   *{
+       margin: 0;
+       padding: 0;      
+   }
+   .main{
+    
+         width: 300px;
+        margin: 0 auto;
+        border:  solid blue;
+       
+   }
+   .zh{
+       width: 100%;
+       height: 40px;
+       line-height: 40px;
+       text-align: center;
+       border-color: blue;
+       margin-top: -2px;
+       margin-left: -2px;
+   }
+   .mm{
+       width: 100%;
+    height: 40px;
+       line-height: 40px;
+       text-align: center;
+       border-color: blue;
+       margin-top: 20px;
+       margin-left: -2px;
+   }
+   .yzm{
+       height: 40px;
+       line-height: 40px;
+       text-align: center;
+       width: 50px;
+       border:1px solid blue;
+   }
+
+
+
+
+    </style>
+</head>
+<body>
+       <div class="main" id="main">
+           <input type="text" class="zh" value="请输入账号">
+            <br />
+            <input type="text" class="mm" value="密码">
+             <div class="yzm" id="yzm"></div>
+             <button class="btn" id="btn">验证码
+             </button>
+       </div>
+  <script>
+
+   
+    function get(){
+        var str = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
+        var resStr = "";
+        for(var i=0;i<4;i++){
+               var index = Math.round(Math.random()*62);
+              
+               if(resStr.indexOf(str[index])>-1){
+                     i--;
+                     continue
+               }
+               resStr+=str[index];
+        } 
+        return resStr
+
+
+     };
+
+     var code = document.getElementById("yzm");
+     var btn = document.getElementById("btn");
+        code.innerText = get();
+        btn.onclick = function(){
+         code.innerText = get();
+     }
+
+
+
+//     function  get(){
+//    var str = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
+//    var res = "";
+//    for(var i=0;i<4;i++){
+//        var index = Math.round(Math.random()*62);
+//        if(res.indexOf(str[index])>-1){
+//            i--;
+//            continue 
+//        };
+//        res+=str[index]  
+//    }
+//     return  res
+// }
+//      var  yzm = document.getElementById("yzm");
+//      var  btn = document.getElementById("btn");
+//         yzm.innerText 
+    
+
+  </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul,ol{
+        list-style: none;
+    }
+    .ul{
+        width: 400px;
+        margin: 0 auto;
+    }
+    .ul li{
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+    /* .ul li:nth-child(2n+1){
+        background-color: aquamarine;
+    }
+    .ul li:nth-child(2n){
+        background-color: bisque;
+    } */
+
+
+
+
+    </style>
+</head>
+<body>
+    <ul class="ul" id="ul">
+       <li>近一段时间，由虎牙直播的DOTA2TI10正进行</li>
+       <li>近一段时间，由虎牙直播的DOTA2TI10正进行</li>
+       <li>近一段时间，由虎牙直播的DOTA2TI10正进行</li>
+       <li>近一段时间，由虎牙直播的DOTA2TI10正进行</li>
+       <li>近一段时间，由虎牙直播的DOTA2TI10正进行</li>
+       <li>近一段时间，由虎牙直播的DOTA2TI10正进行</li>
+       <li>近一段时间，由虎牙直播的DOTA2TI10正进行</li>
+       <li>近一段时间，由虎牙直播的DOTA2TI10正进行</li>
+       <li>近一段时间，由虎牙直播的DOTA2TI10正进行</li>
+</ul>
+
+<script>
+    var ul = document.getElementById("ul");
+    var lis = ul.getElementsByTagName("li")
+    for(var i=0;i<lis.length;i++){
+          if(i%2==0){
+              lis[i].style.backgroundColor="blue"
+          }else{
+            lis[i].style.backgroundColor="red"
+          }
+          lis[i].onmouseover = function(){
+              this.oldColor = this.style.backgroundColor;
+              this.style.backgroundColor = "black"  
+          }
+          lis[i].onmouseout = function(){
+              this.style.backgroundColor = this.oldColor
+          }
+    }
+</script>
+</body>
+</html>
