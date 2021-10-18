@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽奖</title>
+    <style>
+   *{
+      margin: 0;
+      padding: 0; 
+   } 
+    .main{
+        width: 150px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 30px;
+        color: red;
+        border: 2px dashed #444;
+        border-radius: 5px;
+        margin-top: 40px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="main" id="main">
+                       
+    </div>
+
+    <script>
+        function chou(){
+          var str = "1234567890";
+          var res = "";
+          for(var i=0;i<4;i++){             
+              var index = Math.round(Math.random()*9)
+              res+=str[index];
+          }
+        return res   
+        C:\Users\lc123456\2021.10.9\html\隔行变色3.html
+        }
+    var main = document.getElementById("main");
+     main.innerText = chou();
+        var timer = setInterval(function(){
+        main.innerText = chou();
+     },1000);
+     var time = setTimeout(function(){
+         clearInterval(timer)
+         timer = "";
+         clearTimeout(time);
+         time = "";
+         alert("您中奖了")
+     },10000)
+
+
+    </script>
+
+
+</body>
+</html>

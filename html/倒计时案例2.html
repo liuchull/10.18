@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   *{
+       margin: 0;
+       padding: 0;
+   }
+   .p{
+       width: 600px;
+       font-size: 50px;
+       color: cyan;       
+       margin: 0 auto;
+       
+   }
+   .main{
+       width: 300px;
+       height: 40px;
+       line-height: 40px;
+       font-size: 30px;
+       color: red;
+       margin: 0 auto;
+       margin-top: 40px;
+   }
+
+    </style>
+</head>
+
+<body>
+    <div class="p">距离2020年新年有倒计时</div>
+    <div class="main" id="main">
+        
+    </div>
+   <script>
+       function dele(num){
+           if(num<10){
+               return "0"+num
+           }else{
+               return num
+           }
+       } 
+       function downTime(){
+           if(final<=0){
+              return GME
+           }
+       var final = new Date("2022.01.01 00:00:00") - new Date();
+        var day = Math.floor(final/(1000*60*60*24));
+        var hour = Math.floor((final-day*1000*60*60*24)/(1000*60*60) );
+        var minute = Math.floor((final-day*1000*60*60*24-hour*1000*60*60)/(1000*60));
+        var second = Math.floor((final-day*1000*60*60*24-hour*1000*60*60-minute*1000*60)/1000);
+        return  dele(day)+"天" + dele(hour)+"时" + dele(minute)+"分" + dele(second)+"秒"; 
+       };
+    var main = document.getElementById("main");
+      main.innerText=downTime();
+     setInterval(() => {
+        main.innerText=downTime();
+     }, 1000);
+  
+
+
+
+
+
+    </script>
+</body>
+</html>
